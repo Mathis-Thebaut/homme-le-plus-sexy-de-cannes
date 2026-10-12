@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faites analyser votre fiche Google | TBO Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --surface:#FFFFFF; --surface-2:#F1F1EC; --line:#E2E2DB;
+    --text:#111111; --text-dim:#5C5C57; --teal:#1F9C82; --gold:#C9891F; --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--bg); color:var(--text); font-family:'Poppins', sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-weight:700; line-height:1.1; letter-spacing:-0.01em; }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  section{padding:88px 0; border-bottom:1px solid var(--line);}
+  @media (max-width:640px){ section{padding:56px 0;} }
+
+  header{ border-bottom:1px solid #111; background:#fff; }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:1120px; margin:0 auto;}
+  .logo{font-weight:600; font-size:20px; display:flex; align-items:center;}
+  .logo img{ height:34px; width:auto; }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:15px 28px; border-radius:100px; font-weight:600; font-size:15px; }
+  .btn-primary{background:var(--gold); color:#1A1405;}
+
+  .tag{
+    display:inline-block; background:var(--surface-2); border:1px solid var(--line); border-radius:100px;
+    padding:6px 16px; font-size:13px; color:var(--text-dim); margin-bottom:22px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--teal); display:inline-flex; align-items:center; gap:10px; margin-bottom:16px;
+  }
+
+  /* Hero form section */
+  .form-hero{ padding-top:80px; }
+  .form-grid-outer{ display:grid; grid-template-columns:1fr 1.1fr; gap:64px; align-items:start; }
+  @media (max-width:900px){ .form-grid-outer{grid-template-columns:1fr; gap:40px;} }
+  .form-hero h1{ font-size:clamp(34px,5vw,52px); margin-bottom:26px; }
+  .form-hero .lead{ color:var(--text-dim); font-size:16px; max-width:420px; margin-bottom:14px; }
+  .form-hero .guarantee{ color:var(--text-dim); font-size:15px; font-weight:600; margin-top:24px; }
+
+  .lead-form{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:36px; }
+  .field{ border-bottom:1px solid var(--line); padding:16px 4px; }
+  .field label{ display:block; font-size:12px; color:var(--text-dim); margin-bottom:4px; }
+  .field input{
+    width:100%; border:0; background:transparent; font-family:'Poppins', sans-serif; font-size:15px;
+    color:var(--text); padding:2px 0;
+  }
+  .field input:focus{ outline:none; }
+  .field{ position:relative; }
+  .field input::placeholder{ font-weight:600; color:var(--text); opacity:.85; }
+  .field input{ padding-right:18px; }
+  .field .req{ position:absolute; right:6px; top:50%; transform:translateY(-50%); color:#D93025; font-weight:700; font-size:18px; line-height:1; pointer-events:none; }
+  .form-hero h1 em{ font-style:normal; color:var(--teal); }
+  .field-row{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:20px; }
+  @media (max-width:480px){ .field-row{grid-template-columns:1fr;} }
+  .timing-label{ font-size:13px; font-weight:600; margin:22px 0 12px; }
+  .timing-options{ display:flex; gap:10px; flex-wrap:wrap; margin-bottom:26px; }
+  .timing-options label{
+    display:flex; align-items:center; gap:8px; border:1px solid var(--line); border-radius:100px;
+    padding:9px 16px; font-size:13px; color:var(--text-dim); cursor:pointer;
+  }
+  .timing-options input{ accent-color:var(--text); }
+  .lead-form .btn{ width:100%; border:0; cursor:pointer; }
+
+  /* Trust strip (carrousel défilant) */
+  .trust-marquee{ width:100%; overflow:hidden; -webkit-mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image:linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+  .trust-track{ display:flex; width:max-content; animation:trust-scroll 36s linear infinite; }
+  .trust-set{ display:flex; gap:24px; padding-right:240px; flex-shrink:0; }
+  @keyframes trust-scroll{ from{transform:translateX(0);} to{transform:translateX(-50%);} }
+  .trust-card{
+     background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:38px 30px; text-align:center; flex:0 0 340px;
+  }
+  .trust-icon{
+    width:76px; height:76px; border-radius:50%; background:var(--surface-2); color:var(--teal);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 20px;
+  }
+  .trust-icon svg{ width:38px; height:38px; }
+  .trust-card h3{ font-size:19px; margin-bottom:10px; }
+  .trust-card p{ font-size:15px; color:var(--text-dim); line-height:1.5; }
+
+  /* FAQ */
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(30px,4.2vw,42px);}
+  .faq-list{ max-width:760px; }
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:none;}
+  .faq-q{
+    width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    background:none; border:0; text-align:left; font-family:'Poppins', sans-serif; font-weight:600;
+    font-size:15px; color:var(--text); padding:22px 4px; cursor:pointer;
+  }
+  .faq-q .icon{font-family:'IBM Plex Mono',monospace; color:var(--teal); font-size:20px; flex-shrink:0; transition:transform .2s ease;}
+  .faq-item.open .icon{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding:0 4px 22px; color:var(--text-dim); font-size:15px; max-width:640px;}
+
+  /* Footer */
+  footer{ padding:64px 0 32px; border-bottom:none; }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+  @media (max-width:700px){ .footer-grid{grid-template-columns:1fr; gap:32px;} }
+  .footer-logo{ display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+  .footer-logo img{ height:46px; width:auto; }
+  .footer-col h4{ font-size:14px; margin-bottom:14px; }
+  .footer-brand h2{ font-size:clamp(22px,3vw,28px); margin-bottom:10px; }
+  .footer-brand p{ color:var(--text-dim); font-size:14px; text-align:center; }
+  .footer-col a{ display:block; color:var(--text-dim); font-size:14px; margin-bottom:10px; }
+  .footer-col a:hover{ color:var(--text); }
+  .footer-col p{ color:var(--text-dim); font-size:14px; margin-bottom:6px; }
+  .footer-bottom{ border-top:1px solid var(--line); padding-top:24px; color:var(--text-dim); font-size:13px; }
+
+  .nav-links{display:flex; gap:26px; font-size:14px; color:var(--text-dim); flex:1; justify-content:center;}
+  .nav-links a:hover{color:var(--text);}
+  @media (max-width:900px){ .nav-links{display:none;} }
+  /* Scroll reveal */
+  .scroll-reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .scroll-reveal.is-visible{ opacity:1; transform:translateY(0); }
+  .nav-cta{background:var(--gold); color:#1A1405; font-weight:600; font-size:14px; padding:10px 20px; border-radius:100px;}
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  .nav-rdv{
+    background:var(--text); color:#fff; font-weight:600; font-size:14px;
+    padding:10px 20px; border-radius:100px; display:inline-block;
+    animation:rdv-wiggle 4.5s ease-in-out infinite;
+  }
+  @keyframes rdv-wiggle{
+    0%, 90%, 100%{ transform:rotate(0deg) scale(1); }
+    91.5%{ transform:rotate(-3deg) scale(1.04); }
+    93.5%{ transform:rotate(3deg) scale(1.04); }
+    95.5%{ transform:rotate(-2deg) scale(1.02); }
+    97.5%{ transform:rotate(0deg) scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce){ .nav-rdv{ animation:none; } }
+
+  /* menu principal */
+  header{ position:relative; }
+  .mainnav{ display:flex; align-items:center; gap:6px; flex:1; justify-content:center; }
+  .mainnav > a, .mainnav .dd > a{ display:inline-flex; align-items:center; gap:5px; padding:10px 12px; font-size:14px; font-weight:500; color:var(--text); border-radius:10px; }
+  .mainnav > a:hover, .mainnav .dd:hover > a{ background:rgba(0,0,0,.05); }
+  .mainnav .dd{ position:relative; }
+  .mainnav .dd > a svg{ width:11px; height:11px; transition:transform .2s; }
+  .mainnav .dd:hover > a svg, .mainnav .dd:focus-within > a svg{ transform:rotate(180deg); }
+  .mainnav .dd-m{ position:absolute; top:100%; left:50%; transform:translate(-50%,6px); min-width:230px; background:#fff; border:1px solid #e5e5dc; border-radius:14px; box-shadow:0 14px 36px rgba(0,0,0,.10); padding:8px; opacity:0; visibility:hidden; transition:all .18s; z-index:60; text-align:left; }
+  .mainnav .dd::after{ content:""; position:absolute; left:0; right:0; top:100%; height:10px; }
+  .mainnav .dd:hover .dd-m, .mainnav .dd:focus-within .dd-m{ opacity:1; visibility:visible; transform:translate(-50%,0); }
+  .mainnav .dd-m a{ display:block; padding:10px 14px; font-size:14px; color:var(--text); border-radius:9px; }
+  .mainnav .dd-m a:hover{ background:#F1F1EC; }
+  .nav-burger{ display:none; width:42px; height:42px; border:1px solid #e5e5dc; border-radius:12px; background:#fff; cursor:pointer; align-items:center; justify-content:center; }
+  .nav-burger span, .nav-burger span::before, .nav-burger span::after{ display:block; width:18px; height:2px; background:#111; border-radius:2px; position:relative; content:""; }
+  .nav-burger span::before{ position:absolute; top:-6px; } .nav-burger span::after{ position:absolute; top:6px; }
+  @media (max-width:1020px){
+    .nav-burger{ display:inline-flex; order:3; }
+    .nav-actions .nav-rdv{ display:none; }
+    .mainnav{ display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-bottom:1px solid #111; flex-direction:column; align-items:stretch; padding:10px 20px 18px; gap:0; z-index:70; max-height:80vh; overflow:auto; }
+    header.menu-open .mainnav{ display:flex; }
+    .mainnav > a, .mainnav .dd > a{ padding:12px 6px; font-size:16px; justify-content:center; }
+    .mainnav .dd > a svg{ display:none; }
+    .mainnav .dd > a, .mainnav > a{ display:flex; }
+    .mainnav .dd-m{ position:static; transform:none; opacity:1; visibility:visible; box-shadow:none; border:0; padding:0 0 6px; min-width:0; text-align:center; background:transparent; }
+    .mainnav .dd-m a{ font-size:14px; color:var(--text-dim); padding:8px; }
+    .mainnav .dd::after{ display:none; }
+  }
+
+/*FOOTERCENTER*/.footer-brand{text-align:center;}.footer-brand h2,.footer-brand p{text-align:center;}
+</style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script type="application/ld+json">{"@type": "ProfessionalService", "@id": "https://tbo-marketing.com/#organization", "name": "TBO Marketing", "url": "https://tbo-marketing.com/", "logo": "https://tbo-marketing.com/logo.png", "image": "https://tbo-marketing.com/logo.png", "telephone": "+33675828114", "email": "contact@tbo-marketing.com", "description": "Agence de marketing en ligne à Cannes : SEO local, fiche Google Business, Google Ads et Meta Ads, création de site internet et hébergement. 100 % à distance.", "priceRange": "€€", "address": {"@type": "PostalAddress", "addressLocality": "Cannes", "addressRegion": "Provence-Alpes-Côte d'Azur", "addressCountry": "FR"}, "areaServed": [{"@type": "City", "name": "Cannes"}, {"@type": "AdministrativeArea", "name": "Alpes-Maritimes"}, {"@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur"}, {"@type": "Country", "name": "France"}], "knowsAbout": ["SEO local", "Google Business Profile", "Google Ads", "Meta Ads", "Création de site internet", "Hébergement web"], "@context": "https://schema.org"}</script>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="gbp.html" class="logo"><img src="logo.png" alt="TBO Marketing"></a>
+    <nav class="mainnav" aria-label="Menu principal">
+      <a href="gbp.html">Accueil</a>
+      <div class="dd"><a href="services.html">Services <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="service-seo-local.html">Référencement / SEO local</a><a href="service-google-ads-meta-ads.html">Google Ads et Meta Ads</a><a href="service-creation-site-internet.html">Création de site internet</a><a href="service-hebergement.html">Hébergement</a></div></div>
+      <div class="dd"><a href="alpes-maritimes.html">Zones desservies <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="cannes.html">Cannes</a><a href="alpes-maritimes.html">Alpes-Maritimes (06)</a><a href="paca.html">PACA</a><a href="france.html">France</a></div></div>
+      <div class="dd"><a href="blog.html">News <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="blog.html">Blog</a><a href="newsletter.html">Newsletter</a></div></div>
+      <a href="index.html#contact" class="nav-contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://calendly.com/tbo-marketing/decouverte" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tbo-marketing/decouverte'}); return false;" class="nav-rdv">Prendre RDV</a>
+      <a href="index.html" class="nav-cta">S'abonner</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- FORM HERO -->
+<section class="form-hero">
+  <div class="wrap form-grid-outer">
+    <div>
+      <span class="tag">Offert</span>
+      <h1>Faites analyser votre fiche <em>GRATUITEMENT</em></h1>
+      <p class="lead">Remplissez le formulaire et on enregistre votre analyse personnalisée avec les actions précises à mettre en place pour ranker dans le top 3 sur votre zone.</p>
+    </div>
+
+    <div>
+      <!--
+        Ce formulaire est statique (GitHub + Cloudflare = pas de backend).
+        Pour qu'il envoie réellement les réponses vers votre CRM, remplacez l'attribut "action"
+        par votre endpoint Formspree / Tally / Getform, ou connectez un webhook vers votre CRM.
+        Exemple Formspree : action="https://formspree.io/f/VOTRE_ID" method="POST"
+      -->
+      <form class="lead-form" data-form="analyse" data-redirect="analyse-merci.html" action="#" method="POST">
+        <div class="field">
+          <input type="text" name="nom" placeholder="Nom complet" required><span class="req" aria-hidden="true">*</span>
+        </div>
+        <div class="field">
+          <input type="email" name="email" placeholder="Email professionnel" required><span class="req" aria-hidden="true">*</span>
+        </div>
+        <div class="field field-row">
+          <input type="text" name="indicatif" placeholder="+33" value="+33" required>
+          <input type="tel" name="telephone" placeholder="Numéro de téléphone" required><span class="req" aria-hidden="true">*</span>
+        </div>
+        <div class="field">
+          <input type="url" name="site" placeholder="Site web" required><span class="req" aria-hidden="true">*</span>
+        </div>
+        <div class="field">
+          <input type="text" name="entreprise" placeholder="Nom de l'entreprise">
+        </div>
+        <div class="field">
+          <input type="url" name="maps" placeholder="URL Google Maps">
+        </div>
+
+        <div class="timing-label">D'ici quand voulez-vous résoudre ce problème ? <span style="color:#D93025;">*</span></div>
+        <div class="timing-options">
+          <label><input type="radio" name="delai" value="aujourdhui" checked> Aujourd'hui</label>
+          <label><input type="radio" name="delai" value="demain"> Demain</label>
+          <label><input type="radio" name="delai" value="quelques-semaines"> Dans quelques semaines</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Envoyer →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<section id="trust" class="scroll-reveal" style="padding:56px 0; overflow:hidden;">
+  <div class="trust-marquee">
+    <div class="trust-track">
+<div class="trust-set">
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Sans frais</h3>
+        <p>L'analyse est entièrement gratuite, aucune carte bancaire demandée.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>Sans engagement</h3>
+        <p>Vous repartez avec vos 3 conseils, même si vous ne travaillez jamais avec nous.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9.01" y2="10" style="opacity:0"/></svg>
+        </div>
+        <h3>Zéro discours commercial</h3>
+        <p>On vous montre ce qui cloche, point. Pas de relance insistante à la clé.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8z"/></svg>
+        </div>
+        <h3>Garanti</h3>
+        <p>Top 3 en 90 jours, ou on continue de travailler gratuitement jusqu'au résultat.</p>
+      </div>
+      </div>
+<div class="trust-set" aria-hidden="true">
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Sans frais</h3>
+        <p>L'analyse est entièrement gratuite, aucune carte bancaire demandée.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>Sans engagement</h3>
+        <p>Vous repartez avec vos 3 conseils, même si vous ne travaillez jamais avec nous.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="9.01" y2="10" style="opacity:0"/></svg>
+        </div>
+        <h3>Zéro discours commercial</h3>
+        <p>On vous montre ce qui cloche, point. Pas de relance insistante à la clé.</p>
+      </div>
+      <div class="trust-card">
+        <div class="trust-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6.5.9-4.7 4.6 1.1 6.5L12 17l-5.9 3 1.1-6.5L2.5 8.9 9 8z"/></svg>
+        </div>
+        <h3>Garanti</h3>
+        <p>Top 3 en 90 jours, ou on continue de travailler gratuitement jusqu'au résultat.</p>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="logo.png" alt="TBO Marketing"></div>
+        <h2>Dominez votre marché local.</h2>
+        <p>Conçu pour les commerces locaux.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="gbp.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="alpes-maritimes.html">Zones desservies</a>
+        <a href="blog.html">Blog</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+      </div>
+      <div class="footer-col">
+        <h4>TBO Marketing</h4>
+        <p>Cannes et proximité</p>
+        <p>contact@tbo-marketing.com</p>
+        <p>06 75 82 81 14</p>
+        <p style="margin-top:12px; font-weight:600; color:var(--text);">Suivez-nous sur les réseaux sociaux</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tous droits réservés par TBO Marketing. Informations légales sur demande à contact@tbo-marketing.com.
+    </div>
+  </div>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const answer = item.querySelector('.faq-a');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = 0;
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+<script>
+  const revealEls = document.querySelectorAll('.scroll-reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+</script>
+<script>
+(function(){var h=document.querySelector('header'),b=document.getElementById('nav-burger');if(!h||!b)return;
+b.addEventListener('click',function(){var o=h.classList.toggle('menu-open');b.setAttribute('aria-expanded',o);});})();
+</script>
+<script src="forms.js"></script>
+</body>
+</html>

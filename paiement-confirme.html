@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paiement confirmé | TBO Marketing</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --surface:#FFFFFF; --surface-2:#F1F1EC; --line:#E2E2DB;
+    --text:#111111; --text-dim:#5C5C57; --teal:#1F9C82; --gold:#C9891F; --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--bg); color:var(--text); font-family:'Poppins', sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased; }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  header{ border-bottom:1px solid #111; background:#fff; }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:1120px; margin:0 auto;}
+  .logo{font-weight:600; font-size:20px; display:flex; align-items:center;}
+  .logo img{ height:34px; width:auto; background:none; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 26px; border-radius:100px; font-weight:600; font-size:15px; }
+  .btn-primary{background:var(--gold); color:#1A1405;}
+
+  main{ text-align:center; padding:110px 24px 100px; max-width:640px; margin:0 auto; }
+  .icon-circle{
+    width:76px; height:76px; border-radius:50%; background:var(--teal); color:#fff;
+    display:flex; align-items:center; justify-content:center; margin:0 auto 28px;
+  }
+  h1{ font-size:clamp(28px,4vw,38px); font-weight:700; margin-bottom:18px; letter-spacing:-0.01em; }
+  p{ color:var(--text-dim); font-size:16px; margin-bottom:14px; }
+  .next-steps{
+    text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:28px 32px; margin:36px 0; list-style:none;
+  }
+  .next-steps li{ display:flex; gap:12px; margin-bottom:14px; color:var(--text-dim); font-size:15px; }
+  .next-steps li:last-child{ margin-bottom:0; }
+  .next-steps li::before{ content:"✓"; color:var(--teal); flex-shrink:0; }
+  .nav-cta{background:var(--gold); color:#1A1405; font-weight:600; font-size:14px; padding:10px 20px; border-radius:100px;}
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  .nav-rdv{
+    background:var(--text); color:#fff; font-weight:600; font-size:14px;
+    padding:10px 20px; border-radius:100px; display:inline-block;
+    animation:rdv-wiggle 4.5s ease-in-out infinite;
+  }
+  @keyframes rdv-wiggle{
+    0%, 90%, 100%{ transform:rotate(0deg) scale(1); }
+    91.5%{ transform:rotate(-3deg) scale(1.04); }
+    93.5%{ transform:rotate(3deg) scale(1.04); }
+    95.5%{ transform:rotate(-2deg) scale(1.02); }
+    97.5%{ transform:rotate(0deg) scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce){ .nav-rdv{ animation:none; } }
+
+  /* menu principal */
+  header{ position:relative; }
+  .mainnav{ display:flex; align-items:center; gap:6px; flex:1; justify-content:center; }
+  .mainnav > a, .mainnav .dd > a{ display:inline-flex; align-items:center; gap:5px; padding:10px 12px; font-size:14px; font-weight:500; color:var(--text); border-radius:10px; }
+  .mainnav > a:hover, .mainnav .dd:hover > a{ background:rgba(0,0,0,.05); }
+  .mainnav .dd{ position:relative; }
+  .mainnav .dd > a svg{ width:11px; height:11px; transition:transform .2s; }
+  .mainnav .dd:hover > a svg, .mainnav .dd:focus-within > a svg{ transform:rotate(180deg); }
+  .mainnav .dd-m{ position:absolute; top:100%; left:50%; transform:translate(-50%,6px); min-width:230px; background:#fff; border:1px solid #e5e5dc; border-radius:14px; box-shadow:0 14px 36px rgba(0,0,0,.10); padding:8px; opacity:0; visibility:hidden; transition:all .18s; z-index:60; text-align:left; }
+  .mainnav .dd::after{ content:""; position:absolute; left:0; right:0; top:100%; height:10px; }
+  .mainnav .dd:hover .dd-m, .mainnav .dd:focus-within .dd-m{ opacity:1; visibility:visible; transform:translate(-50%,0); }
+  .mainnav .dd-m a{ display:block; padding:10px 14px; font-size:14px; color:var(--text); border-radius:9px; }
+  .mainnav .dd-m a:hover{ background:#F1F1EC; }
+  .nav-burger{ display:none; width:42px; height:42px; border:1px solid #e5e5dc; border-radius:12px; background:#fff; cursor:pointer; align-items:center; justify-content:center; }
+  .nav-burger span, .nav-burger span::before, .nav-burger span::after{ display:block; width:18px; height:2px; background:#111; border-radius:2px; position:relative; content:""; }
+  .nav-burger span::before{ position:absolute; top:-6px; } .nav-burger span::after{ position:absolute; top:6px; }
+  @media (max-width:1020px){
+    .nav-burger{ display:inline-flex; order:3; }
+    .nav-actions .nav-rdv{ display:none; }
+    .mainnav{ display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-bottom:1px solid #111; flex-direction:column; align-items:stretch; padding:10px 20px 18px; gap:0; z-index:70; max-height:80vh; overflow:auto; }
+    header.menu-open .mainnav{ display:flex; }
+    .mainnav > a, .mainnav .dd > a{ padding:12px 6px; font-size:16px; justify-content:center; }
+    .mainnav .dd > a svg{ display:none; }
+    .mainnav .dd > a, .mainnav > a{ display:flex; }
+    .mainnav .dd-m{ position:static; transform:none; opacity:1; visibility:visible; box-shadow:none; border:0; padding:0 0 6px; min-width:0; text-align:center; background:transparent; }
+    .mainnav .dd-m a{ font-size:14px; color:var(--text-dim); padding:8px; }
+    .mainnav .dd::after{ display:none; }
+  }
+</style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="gbp.html" class="logo"><img src="logo.png" alt="TBO Marketing"></a>
+    <nav class="mainnav" aria-label="Menu principal">
+      <a href="gbp.html">Accueil</a>
+      <div class="dd"><a href="services.html">Services <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="service-seo-local.html">Référencement / SEO local</a><a href="service-google-ads-meta-ads.html">Google Ads et Meta Ads</a><a href="service-creation-site-internet.html">Création de site internet</a><a href="service-hebergement.html">Hébergement</a></div></div>
+      <div class="dd"><a href="alpes-maritimes.html">Zones desservies <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="cannes.html">Cannes</a><a href="alpes-maritimes.html">Alpes-Maritimes (06)</a><a href="paca.html">PACA</a><a href="france.html">France</a></div></div>
+      <div class="dd"><a href="blog.html">News <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="blog.html">Blog</a><a href="newsletter.html">Newsletter</a></div></div>
+      <a href="index.html#contact" class="nav-contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://calendly.com/tbo-marketing/decouverte" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tbo-marketing/decouverte'}); return false;" class="nav-rdv">Prendre RDV</a>
+      <a href="index.html" class="nav-cta">S'abonner</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="icon-circle">
+    <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+  </div>
+  <h1>Paiement confirmé, bienvenue !</h1>
+  <p>Merci pour votre confiance. Votre paiement a bien été reçu et votre accompagnement de 90 jours démarre dès la réception de vos accès.</p>
+  <p>Un email de confirmation, avec votre reçu, vient de vous être envoyé automatiquement.</p>
+
+  <ul class="next-steps">
+    <li>Vous recevez dans les 24h un email d'onboarding avec les instructions pour nous donner un accès sécurisé à votre fiche Google Business Profile et à votre site.</li>
+    <li>On planifie ensemble un appel de lancement pour passer en revue votre marché et vos objectifs.</li>
+    <li>Le compte à rebours des 90 jours démarre dès qu'on a reçu vos accès.</li>
+  </ul>
+
+  <p style="font-size:14px;">Une question en attendant ? <a href="index.html#contact" style="color:var(--teal); font-weight:600;">Contactez-nous</a>.</p>
+</main>
+
+<script src="https://assets.calendly.com/assets/external/widget.js"></script>
+<script>
+(function(){var h=document.querySelector('header'),b=document.getElementById('nav-burger');if(!h||!b)return;
+b.addEventListener('click',function(){var o=h.classList.toggle('menu-open');b.setAttribute('aria-expanded',o);});})();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/zone-cannes.html /cannes.html 301
+/zone-cannes /cannes.html 301
+/zone-* /alpes-maritimes.html 301
+/zone-*.html /alpes-maritimes.html 301
+/zones.html /alpes-maritimes.html 301
+/zones /alpes-maritimes.html 301
+/main-page.html /gbp.html 301
+/main-page /gbp.html 301
+/contact.html /index.html 301
+/contact /index.html 301
+/service-optimisation-fiche-google-business.html /service-seo-local.html 301
+/service-optimisation-fiche-google-business /service-seo-local.html 301

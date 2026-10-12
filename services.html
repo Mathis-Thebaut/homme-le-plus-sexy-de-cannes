@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services de marketing en ligne à Cannes - référencement / SEO local, Google Ads et Meta Ads, création de site internet et hébergement, TBO Marketing travaille 100 % à distance</title>
+<meta name="description" content="Les services de TBO Marketing : référencement / SEO local (fiche Google Business incluse), Google Ads et Meta Ads, création de site internet. Agence à Cannes.">
+<link rel="canonical" href="https://tbo-marketing.com/services.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --surface:#FFFFFF; --surface-2:#F1F1EC; --line:#E2E2DB;
+    --text:#111111; --text-dim:#5C5C57; --teal:#1F9C82; --teal-dim:#17755F; --gold:#C9891F; --radius:14px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{ background:var(--bg); color:var(--text); font-family:'Poppins', sans-serif; line-height:1.7; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-weight:700; line-height:1.15; letter-spacing:-0.01em; }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  header{ border-bottom:1px solid #111; background:#fff; }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 24px; max-width:1120px; margin:0 auto; gap:20px;}
+  .logo{font-weight:600; font-size:20px; display:flex; align-items:center;}
+  .logo img{ height:34px; width:auto; background:none; }
+  .nav-links{display:flex; gap:26px; font-size:14px; color:var(--text-dim); flex:1; justify-content:center;}
+  .nav-links a:hover{color:var(--text);}
+  @media (max-width:900px){ .nav-links{display:none;} }
+  .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 26px; border-radius:100px; font-weight:600; font-size:15px; }
+  .nav-cta{background:var(--gold); color:#1A1405; font-weight:600; font-size:14px; padding:10px 20px; border-radius:100px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--teal); display:inline-flex; align-items:center; gap:10px; margin-bottom:16px;
+  }
+  .tag{
+    display:inline-block; background:var(--surface-2); border:1px solid var(--line); border-radius:100px;
+    padding:6px 16px; font-size:13px; color:var(--text-dim); margin-bottom:22px;
+  }
+
+  .breadcrumb{ font-size:13px; color:var(--text-dim); padding:18px 0 0; }
+  .breadcrumb a{ color:var(--teal); }
+  .breadcrumb span{ margin:0 6px; }
+
+  /* Hero */
+  .hero{ padding:40px 0 56px; }
+  .hero h1{ font-size:clamp(30px,4.5vw,44px); margin-bottom:18px; max-width:760px; }
+  .hero p.lead{ font-size:17px; color:var(--text-dim); max-width:680px; margin-bottom:14px; }
+  .hero .btn-row{ display:flex; gap:16px; flex-wrap:wrap; margin-top:26px; }
+  .hero{ text-align:center; }
+  .hero h1, .hero p.lead{ margin-left:auto; margin-right:auto; }
+  .hero .btn-row{ justify-content:center; }
+  .hero .eyebrow{ margin-left:auto; margin-right:auto; }
+  .btn-primary{background:var(--gold); color:#1A1405;}
+  .btn-secondary{background:var(--surface-2); color:var(--text); border:1px solid var(--line);}
+
+  /* Article-style content */
+  article{ max-width:780px; margin:0 auto; padding:8px 24px 24px; }
+  article p{ color:var(--text-dim); font-size:16px; margin-bottom:18px; }
+  article h2{ font-size:24px; margin:36px 0 14px; color:var(--text); }
+  article strong{ color:var(--text); }
+  .rows{ padding:8px 0 24px; }
+  .row{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; max-width:1040px; margin:0 auto 72px; padding:0 24px; }
+  .row.reverse .row-img{ order:2; }
+  .row-img svg{ width:100%; height:auto; display:block; }
+  .row-text{ text-align:center; }
+  .row-text h2{ font-size:26px; margin:0 0 16px; color:var(--text); }
+  .row-text p{ color:var(--text-dim); font-size:16px; margin-bottom:14px; }
+  .row-text strong{ color:var(--text); }
+  .row-text ul{ list-style:none; margin:0 0 16px; padding:0; color:var(--text-dim); font-size:16px; }
+  .row-text li{ margin-bottom:8px; }
+  @media (max-width:760px){ .row{ grid-template-columns:1fr; gap:24px; margin-bottom:56px; } .row.reverse .row-img{ order:0; } .row-img svg{ max-width:380px; margin:0 auto; } }
+  article{ text-align:center; }
+  article ul{ list-style:none; margin:0 0 20px 0; padding:0; color:var(--text-dim); font-size:16px; }
+  article li{ margin-bottom:8px; }
+
+  section:not(.hero){ padding:0; }
+  .content-section{ padding:56px 0; border-top:1px solid var(--line); }
+  .section-head{max-width:680px; margin:0 auto 40px; text-align:center;}
+  .section-head h2{font-size:clamp(28px,3.8vw,38px);}
+
+  /* value grid (reused avantages) */
+  .value-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1120px; margin:0 auto;}
+  @media (max-width:800px){ .value-grid{grid-template-columns:1fr;} }
+  .value-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); padding:32px 28px; text-align:center; }
+  .value-icon{
+    width:56px; height:56px; border-radius:50%; background:var(--surface-2); color:var(--teal);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 20px;
+  }
+  .value-card h3{ font-size:18px; margin-bottom:10px; }
+  .value-card p{ font-size:14px; color:var(--text-dim); }
+  .value-card p{ color:var(--text); }
+  .value-card p strong{ color:inherit; font-weight:400; }
+
+  /* zones grid (hub page) */
+  .zones-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  @media (max-width:800px){ .zones-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .zones-grid{grid-template-columns:1fr;} }
+  .zone-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:24px; display:flex; flex-direction:column; gap:6px; transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .zone-card:hover{ transform:translateY(-3px); box-shadow:0 12px 28px -16px rgba(17,17,17,0.25); }
+  .zone-card .zone-tag{ font-size:12px; color:var(--teal); font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:.08em; }
+  .zone-card h3{ font-size:18px; }
+  .zone-card p{ font-size:13px; color:var(--text-dim); }
+  .svc-grid{ grid-template-columns:repeat(2,1fr); max-width:960px; margin:0 auto; gap:28px; }
+  .svc-grid .zone-card:last-child:nth-child(odd){ grid-column:1 / -1; justify-self:center; width:calc(50% - 14px); }
+  @media (max-width:640px){ .svc-grid .zone-card:last-child:nth-child(odd){ width:auto; } .svc-grid{ grid-template-columns:1fr; } }
+  .zone-card.svc{ text-align:center; align-items:center; padding:20px 20px 32px; gap:10px; }
+  .svc-img{ width:100%; margin-bottom:10px; } .svc-img svg{ width:100%; height:auto; display:block; }
+  .zone-card.svc h3{ font-size:20px; } .zone-card.svc p{ font-size:15px; }
+  .svc-icon{ width:64px; height:64px; border-radius:50%; background:var(--surface-2); color:var(--teal); display:flex; align-items:center; justify-content:center; margin-bottom:6px; }
+  .zone-card.priority{ border-color:var(--gold); background:#FFFCF5; }
+
+  .related-links{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+  section.content-section{ margin-top:40px; padding-top:64px; padding-bottom:40px; }
+  .related-links a{
+    background:var(--surface-2); border:1px solid var(--line); border-radius:100px; padding:8px 16px; font-size:13px; color:var(--text-dim);
+  }
+  .related-links a:hover{ color:var(--text); border-color:var(--text-dim); }
+
+  /* CTA card */
+  .svc-pick{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:0 auto 22px; max-width:560px; }
+  .svc-pick label{ cursor:pointer; }
+  .svc-pick input{ position:absolute; opacity:0; pointer-events:none; }
+  .svc-pick span{ display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border:1px solid var(--line); border-radius:999px; background:#fff; font-size:14px; font-weight:500; color:var(--text); transition:all .2s; }
+  .svc-pick span::before{ content:""; width:16px; height:16px; border-radius:5px; border:1.5px solid #bdbdb3; background:#fff center/12px no-repeat; transition:all .2s; }
+  .svc-pick input:checked + span{ border-color:var(--teal); background:rgba(31,156,130,.08); }
+  .svc-pick input:checked + span::before{ background-color:var(--teal); border-color:var(--teal); background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E"); }
+  .svc-pick input:focus-visible + span{ outline:2px solid var(--teal); outline-offset:2px; }
+  .svc-hint{ color:#c0392b !important; font-size:13px !important; margin:-8px auto 14px !important; }
+  .cta-card{
+    max-width:640px; margin:0 auto; background:var(--surface); border:1px solid var(--line);
+    border-radius:var(--radius); padding:48px 40px; text-align:center;
+  }
+  .cta-card h2{ font-size:clamp(24px,3.2vw,30px); margin-bottom:16px; }
+  .cta-card p{ color:var(--text-dim); font-size:15px; max-width:440px; margin:0 auto 22px; }
+
+  /* Scroll reveal */
+  .scroll-reveal{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s ease; }
+  .scroll-reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+  /* Footer */
+  footer{ padding:64px 0 32px; border-top:1px solid var(--line); }
+  .footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+  @media (max-width:700px){ .footer-grid{grid-template-columns:1fr; gap:32px;} }
+  .footer-logo{ display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+  .footer-logo img{ height:46px; width:auto; background:none; }
+  .footer-col h4{ font-size:14px; margin-bottom:14px; }
+  .footer-brand h2{ font-size:clamp(22px,3vw,28px); margin-bottom:10px; }
+  .footer-brand p{ color:var(--text-dim); font-size:14px; text-align:center; }
+  .footer-col a{ display:block; color:var(--text-dim); font-size:14px; margin-bottom:10px; }
+  .footer-col a:hover{ color:var(--text); }
+  .footer-col p{ color:var(--text-dim); font-size:14px; margin-bottom:6px; }
+  .footer-bottom{ border-top:1px solid var(--line); padding-top:24px; color:var(--text-dim); font-size:13px; }
+  .nav-actions{ display:flex; align-items:center; gap:12px; }
+  .nav-rdv{
+    background:var(--text); color:#fff; font-weight:600; font-size:14px;
+    padding:10px 20px; border-radius:100px; display:inline-block;
+    animation:rdv-wiggle 4.5s ease-in-out infinite;
+  }
+  @keyframes rdv-wiggle{
+    0%, 90%, 100%{ transform:rotate(0deg) scale(1); }
+    91.5%{ transform:rotate(-3deg) scale(1.04); }
+    93.5%{ transform:rotate(3deg) scale(1.04); }
+    95.5%{ transform:rotate(-2deg) scale(1.02); }
+    97.5%{ transform:rotate(0deg) scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce){ .nav-rdv{ animation:none; } }
+
+  /* menu principal */
+  header{ position:relative; }
+  .mainnav{ display:flex; align-items:center; gap:6px; flex:1; justify-content:center; }
+  .mainnav > a, .mainnav .dd > a{ display:inline-flex; align-items:center; gap:5px; padding:10px 12px; font-size:14px; font-weight:500; color:var(--text); border-radius:10px; }
+  .mainnav > a:hover, .mainnav .dd:hover > a{ background:rgba(0,0,0,.05); }
+  .mainnav .dd{ position:relative; }
+  .mainnav .dd > a svg{ width:11px; height:11px; transition:transform .2s; }
+  .mainnav .dd:hover > a svg, .mainnav .dd:focus-within > a svg{ transform:rotate(180deg); }
+  .mainnav .dd-m{ position:absolute; top:100%; left:50%; transform:translate(-50%,6px); min-width:230px; background:#fff; border:1px solid #e5e5dc; border-radius:14px; box-shadow:0 14px 36px rgba(0,0,0,.10); padding:8px; opacity:0; visibility:hidden; transition:all .18s; z-index:60; text-align:left; }
+  .mainnav .dd::after{ content:""; position:absolute; left:0; right:0; top:100%; height:10px; }
+  .mainnav .dd:hover .dd-m, .mainnav .dd:focus-within .dd-m{ opacity:1; visibility:visible; transform:translate(-50%,0); }
+  .mainnav .dd-m a{ display:block; padding:10px 14px; font-size:14px; color:var(--text); border-radius:9px; }
+  .mainnav .dd-m a:hover{ background:#F1F1EC; }
+  .nav-burger{ display:none; width:42px; height:42px; border:1px solid #e5e5dc; border-radius:12px; background:#fff; cursor:pointer; align-items:center; justify-content:center; }
+  .nav-burger span, .nav-burger span::before, .nav-burger span::after{ display:block; width:18px; height:2px; background:#111; border-radius:2px; position:relative; content:""; }
+  .nav-burger span::before{ position:absolute; top:-6px; } .nav-burger span::after{ position:absolute; top:6px; }
+  @media (max-width:1020px){
+    .nav-burger{ display:inline-flex; order:3; }
+    .nav-actions .nav-rdv{ display:none; }
+    .mainnav{ display:none; position:absolute; top:100%; left:0; right:0; background:#fff; border-bottom:1px solid #111; flex-direction:column; align-items:stretch; padding:10px 20px 18px; gap:0; z-index:70; max-height:80vh; overflow:auto; }
+    header.menu-open .mainnav{ display:flex; }
+    .mainnav > a, .mainnav .dd > a{ padding:12px 6px; font-size:16px; justify-content:center; }
+    .mainnav .dd > a svg{ display:none; }
+    .mainnav .dd > a, .mainnav > a{ display:flex; }
+    .mainnav .dd-m{ position:static; transform:none; opacity:1; visibility:visible; box-shadow:none; border:0; padding:0 0 6px; min-width:0; text-align:center; background:transparent; }
+    .mainnav .dd-m a{ font-size:14px; color:var(--text-dim); padding:8px; }
+    .mainnav .dd::after{ display:none; }
+  }
+
+/*FOOTERCENTER*/.footer-brand{text-align:center;}.footer-brand h2,.footer-brand p{text-align:center;}
+/*BTNROWGAP*/.btn-row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;}
+</style>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script type="application/ld+json">{"@type": "ProfessionalService", "@id": "https://tbo-marketing.com/#organization", "name": "TBO Marketing", "url": "https://tbo-marketing.com/", "logo": "https://tbo-marketing.com/logo.png", "image": "https://tbo-marketing.com/logo.png", "telephone": "+33675828114", "email": "contact@tbo-marketing.com", "description": "Agence de marketing en ligne à Cannes : référencement / SEO local, Google Ads et Meta Ads, création de site internet et hébergement. 100 % à distance.", "priceRange": "€€", "address": {"@type": "PostalAddress", "addressLocality": "Cannes", "addressRegion": "Provence-Alpes-Côte d'Azur", "addressCountry": "FR"}, "areaServed": [{"@type": "City", "name": "Cannes"}, {"@type": "AdministrativeArea", "name": "Alpes-Maritimes"}, {"@type": "AdministrativeArea", "name": "Provence-Alpes-Côte d'Azur"}, {"@type": "Country", "name": "France"}], "knowsAbout": ["SEO local", "Google Business Profile", "Google Ads", "Meta Ads", "Création de site internet", "Hébergement web"], "@context": "https://schema.org"}</script>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="gbp.html" class="logo"><img src="logo.png" alt="TBO Marketing"></a>
+    <nav class="mainnav" aria-label="Menu principal">
+      <a href="gbp.html">Accueil</a>
+      <div class="dd"><a href="services.html">Services <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="service-seo-local.html">Référencement / SEO local</a><a href="service-google-ads-meta-ads.html">Google Ads et Meta Ads</a><a href="service-creation-site-internet.html">Création de site internet</a><a href="service-hebergement.html">Hébergement</a></div></div>
+      <div class="dd"><a href="alpes-maritimes.html">Zones desservies <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="cannes.html">Cannes</a><a href="alpes-maritimes.html">Alpes-Maritimes (06)</a><a href="paca.html">PACA</a><a href="france.html">France</a></div></div>
+      <div class="dd"><a href="blog.html">News <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4l4 4 4-4"/></svg></a><div class="dd-m"><a href="blog.html">Blog</a><a href="newsletter.html">Newsletter</a></div></div>
+      <a href="index.html#contact" class="nav-contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://calendly.com/tbo-marketing/decouverte" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/tbo-marketing/decouverte'}); return false;" class="nav-rdv">Prendre RDV</a>
+      <a href="index.html" class="nav-cta">S'abonner</a>
+      <button class="nav-burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap breadcrumb">
+  <a href="gbp.html">Accueil</a><span>/</span>Services
+</div>
+
+
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Nos services</div>
+    <h1>Vous voulez être visible sur Google ?</h1>
+    <p class="lead">Consultez ces quatre services et voyez ce qui correspond le mieux à votre situation.</p>
+    <p class="lead">Agence de marketing en ligne basée à Cannes, 100 % à distance.</p>
+    <div class="btn-row">
+      <a href="analyse-gratuite.html" class="btn btn-primary">Audit gratuit de ma fiche Google</a>
+      <a href="index.html#contact" class="btn btn-secondary">Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<section class="content-section scroll-reveal" style="margin-top:0; border-top:0; padding-top:0;">
+  <div class="wrap">
+    <div class="zones-grid svc-grid">
+      <a href="service-seo-local.html" class="zone-card svc">
+        <div class="svc-img"><img src="images/svc-seo.jpg" alt="Recherche Google" loading="lazy" style="width:100%;height:auto;display:block;border-radius:20px"></div>
+        <h3>Référencement / SEO local</h3>
+        <p>On optimise votre site et votre fiche Google, pour vous placer dans le top 3 Google et Google Maps.</p>
+      </a>
+      <a href="service-google-ads-meta-ads.html" class="zone-card svc">
+        <div class="svc-img"><img src="images/svc-ads.jpg" alt="Meta et Google Ads" loading="lazy" style="width:100%;height:auto;display:block;border-radius:20px"></div>
+        <h3>Google Ads et Meta Ads</h3>
+        <p>On utilise les leviers les plus puissants de la publicité, pour obtenir de la visibilité et des clients rapidement.</p>
+      </a>
+      <a href="service-creation-site-internet.html" class="zone-card svc">
+        <div class="svc-img"><img src="images/svc-site.jpg" alt="Création de site internet" loading="lazy" style="width:100%;height:auto;display:block;border-radius:20px"></div>
+        <h3>Création de site internet</h3>
+        <p>On crée un site clair, visuel et optimisé pour le référencement.</p>
+      </a>
+      <a href="service-hebergement.html" class="zone-card svc">
+        <div class="svc-img"><img src="images/svc-hebergement.jpg" alt="Hébergement de votre site" loading="lazy" style="width:100%;height:auto;display:block;border-radius:20px"></div>
+        <h3>Hébergement</h3>
+        <p>On gère l'hébergement de votre site.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="content-section scroll-reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="tag">Les avantages</span>
+      <h2>Pourquoi passer par <strong>TBO Marketing</strong></h2>
+    </div>
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Disponibilité</h3>
+        <p><strong>Facilement joignable</strong>, et un travail mené <strong>rapidement</strong>.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5z"/><path d="M8.5 12l2.5 2.5L15.5 9.5"/></svg>
+        </div>
+        <h3>Garantie</h3>
+        <p>La <strong>seule entreprise</strong> qui <strong>garantit le résultat</strong>.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.6"/></svg>
+        </div>
+        <h3>100 % local</h3>
+        <p>Un interlocuteur qui ne travaille <strong>qu'avec les entreprises locales</strong>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section scroll-reveal">
+  <div class="wrap">
+    <div class="cta-card">
+      <span class="tag">Prochaine étape</span>
+      <h2>Quel service vous correspond ?</h2>
+      <p>Cochez ce qui vous intéresse. Puis prenez rendez-vous, c'est gratuit.</p>
+      <form id="svc-pick" class="svc-pick" onsubmit="return false;">
+        <label><input type="checkbox" value="Référencement / SEO local"><span>Référencement / SEO local</span></label>
+        <label><input type="checkbox" value="Google Ads et Meta Ads"><span>Google Ads et Meta Ads</span></label>
+        <label><input type="checkbox" value="Création de site internet"><span>Création de site internet</span></label>
+        <label><input type="checkbox" value="Hébergement"><span>Hébergement</span></label>
+      </form>
+      <p class="svc-hint" id="svc-hint" style="display:none;">Cochez au moins un service.</p>
+      <div class="btn-row" style="justify-content:center;">
+        <a href="https://calendly.com/tbo-marketing/decouverte" id="svc-rdv" class="btn btn-primary">Prendre RDV</a>
+        <a href="index.html#contact" class="btn btn-secondary">Nous contacter</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="content-section scroll-reveal">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:24px;">
+      <h2 style="font-size:20px;">Autres pages</h2>
+    </div>
+    <div class="related-links"><a href="cannes.html">Cannes</a><a href="alpes-maritimes.html">Alpes-Maritimes</a><a href="paca.html">PACA</a><a href="france.html">France</a></div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="footer-logo"><img src="logo.png" alt="TBO Marketing"></div>
+        <h2>Dominez votre marché<br>local.</h2>
+        <p>Conçu pour les commerces locaux.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="gbp.html">Accueil</a>
+        <a href="services.html">Services</a>
+        <a href="alpes-maritimes.html">Zones desservies</a>
+        <a href="blog.html">Blog</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="conditions.html">Conditions d'utilisation</a>
+      </div>
+      <div class="footer-col">
+        <h4>TBO Marketing</h4>
+        <p>Cannes et proximité</p>
+        <p>contact@tbo-marketing.com</p>
+        <p>06 75 82 81 14</p>
+        <p style="margin-top:12px; font-weight:600; color:var(--text);">Suivez-nous sur les réseaux sociaux</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Tous droits réservés par TBO Marketing. Informations légales sur demande à contact@tbo-marketing.com.
+    </div>
+  </div>
+</footer>
+
+<script src="https://assets.calendly.com/assets/external/widget.js"></script>
+
+<script>
+  const revealEls = document.querySelectorAll('.scroll-reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+<script>
+(function(){
+  var btn=document.getElementById('svc-rdv'), hint=document.getElementById('svc-hint');
+  if(!btn) return;
+  btn.addEventListener('click',function(e){
+    e.preventDefault();
+    var v=[].map.call(document.querySelectorAll('#svc-pick input:checked'),function(i){return i.value;});
+    if(!v.length){ hint.style.display='block'; return; }
+    hint.style.display='none';
+    var url='https://calendly.com/tbo-marketing/decouverte?a1='+encodeURIComponent(v.join(', '));
+    if(window.Calendly){ Calendly.initPopupWidget({url:url}); } else { window.open(url,'_blank'); }
+  });
+  document.getElementById('svc-pick').addEventListener('change',function(){ hint.style.display='none'; });
+})();
+</script>
+<script>
+(function(){var h=document.querySelector('header'),b=document.getElementById('nav-burger');if(!h||!b)return;
+b.addEventListener('click',function(){var o=h.classList.toggle('menu-open');b.setAttribute('aria-expanded',o);});})();
+</script>
+</body>
+</html>
